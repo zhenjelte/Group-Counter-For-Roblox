@@ -1,9 +1,10 @@
 const https = require('https');
 const http = require('http');
+const fs = require('fs');
 
-const GROUP_ID = '34050513'; // Replace with your Roblox group ID
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/1370834881361481850/c8hdqmxMDAH-pcMFlfRKEVW_RxfVgTHmmwcRtnh4xsmf0TZ6In4OxkcNHvP_XpZu162u'; // Replace with your Discord webhook URL
-const GOAL = 100; // Your group member goal
+const GROUP_ID = '33534107'; // Replace with your Roblox group ID
+const WEBHOOK_URL = 'https://discord.com/api/webhooks/1455952439671783564/0UXQX0YB58rOrh-PT55uAw7nPLFrZif5743KhCv7fHo169vft8BaQJSz62mG9y5t92jC'; // Replace with your Discord webhook URL
+const GOAL = 12000; // Your group member goal
 
 let lastCount = null;
 
@@ -28,7 +29,7 @@ function postToWebhookEmbed(count, remaining, goal) {
         embeds: [
             {
                 color: 0x436cc8, // Theme color
-                description: `🐳 [Oceanu](https://www.roblox.com/communities/34050513/Oceanu#!/about) now has **${count.toLocaleString()} Roblox members!**\n> **${remaining.toLocaleString()}** more Roblox members until we reach our goal of **${goal.toLocaleString()}!**`,
+                description: `🐳 Zhen-Jelte's Roblox group now has **${count.toLocaleString()} members!**\n> **${remaining.toLocaleString()}** more members until we reach our goal of **${goal.toLocaleString()}!**`,
                 footer: {
                     text: 'Live counter made by Zhen-Jelte'
                 },
@@ -68,6 +69,7 @@ async function checkGroupCount() {
 
             const remaining = GOAL - count;
             postToWebhookEmbed(count, remaining, GOAL);
+            // postToWebhook(message);
             console.log('Posted new count:', count);
         }
     } catch (err) {
@@ -84,3 +86,4 @@ http.createServer((req, res) => {
 // Start checking
 checkGroupCount();
 setInterval(checkGroupCount, 10 * 1000); // Check every 10 seconds
+
