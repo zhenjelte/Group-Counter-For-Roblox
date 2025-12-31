@@ -30,6 +30,7 @@ function postToWebhookEmbed(count, remaining, goal) {
             {
                 color: 0x436cc8, // Theme color
                 description: `🐳 [Zhen-Jelte's Roblox group](https://www.roblox.com/communities/33534107/Zhen-Jelte#!/about) now has **${count.toLocaleString()} members!**\n> **${remaining.toLocaleString()}** more Roblox members until we reach our goal of **${goal.toLocaleString()}!**`,
+                footer: {
                     text: 'Live counter made by Zhen-Jelte'
                 },
                 timestamp: new Date().toISOString()
