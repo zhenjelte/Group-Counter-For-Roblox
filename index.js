@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const GROUP_ID = '33534107'; // Replace with your Roblox group ID
 const WEBHOOK_URL = 'https://discord.com/api/webhooks/1455952439671783564/0UXQX0YB58rOrh-PT55uAw7nPLFrZif5743KhCv7fHo169vft8BaQJSz62mG9y5t92jC'; // Replace with your Discord webhook URL
-const GOAL = 12000; // Your group member goal
+const GOAL = 30000; // Your group member goal
 
 let lastCount = null;
 
